@@ -1,0 +1,96 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            .mainContentsWrap {
+                position: relative;
+                height: 500px;
+            }
+            .mainContents {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 500px;
+                height: 500px;
+                transition: 1.0s ;
+            }
+            .subList {
+                display: flex;
+                flex-wrap: wrap;
+                width: 500px;
+            }
+            .subItem {
+                box-sizing: border-box;
+                width: 125px;
+                height: auto;
+                border: solid 4px transparent;
+            }
+            .subItem:hover {
+                cursor: pointer;
+                opacity: .5;
+                border: solid 4px #333
+            }
+            .subItem img {
+                vertical-align: bottom;
+                width: 100%;
+            }
+        </style>
+        <div class="mainContentsWrap">
+            <img src="./images/image01.png" class="mainContents">
+            <img src="./images/image02.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image03.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image04.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image05.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image06.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image07.png" class="mainContents" style="opacity: 0">
+            <img src="./images/image08.png" class="mainContents" style="opacity: 0">
+        </div>
+        <div class="subList">
+            <div class="subItem">
+                <img src="./images/image01.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image02.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image03.png" class="subImage">
+            </div>            
+            <div class="subItem">
+                <img src="./images/image04.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image05.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image06.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image07.png" class="subImage">
+            </div>
+            <div class="subItem">
+                <img src="./images/image08.png" class="subImage">
+            </div>
+        </div>
+        <script>
+            const mainContents =  document.getElementsByClassName('mainContents');
+            const button = document.getElementsByClassName('subItem');
+
+            for(let i = 0; i < button.length; i ++) {
+                button[i].addEventListener('click',function(){
+                    // console.log(button[i].attributes.src.value)
+                    for(let j = 0; j < mainContents.length; j++) {
+                        if(i != j) {
+                            mainContents[j].style.opacity = "0"
+                        } else {
+                            mainContents[j].style.opacity = "1"
+                        }
+                        
+                    }
+                    
+                })
+            }
+        </script>
+    </body>
+</html>
